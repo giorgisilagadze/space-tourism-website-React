@@ -8,6 +8,7 @@ import CrewMember from "./pages/CrewMember";
 import Vehicle from "./pages/Vehicle";
 import { Helmet } from "react-helmet";
 import { GlobalStyled } from "./styled-components/Global.Styled";
+import Header from "./components/Header";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
     </Helmet>
     <GlobalStyled />
     <Router>
+    <Header />
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/Destination" element={<Destination />}/>

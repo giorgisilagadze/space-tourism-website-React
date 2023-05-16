@@ -12,6 +12,9 @@ export const GlobalStyled = createGlobalStyle`
     body {
         background-image: url("./assets/home/background-home-mobile.jpg");
         background-repeat: no-repeat;
+        background-size: 100% 667px;
+        width: 100vw;
+        padding: 24px;
     }
 `
 
