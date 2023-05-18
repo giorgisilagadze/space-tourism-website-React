@@ -7,7 +7,7 @@ import {
   PagesDiv,
   SinglePageDiv,
   PageId,
-  PageName,
+  PageNameMenu,
   StyledLink,
 } from "../styled-components/Header.Styled";
 import { useLocation } from "react-router-dom";
@@ -43,7 +43,7 @@ export default function Header() {
     {
       id: "02",
       name: "CREW",
-      realPath: "/Crew/Douglas",
+      realPath: "/Crew/Douglas Hurley",
     },
     {
       id: "03",
@@ -71,10 +71,14 @@ export default function Header() {
           {pages.map((item) => (
             <StyledLink to={item.realPath} key={Math.random()}>
               <SinglePageDiv
-                display={item.realPath === currentPath ? "block" : "none"}
+                display={
+                  item.realPath.split("/")[1] === currentPath.split("/")[1]
+                    ? "block"
+                    : "none"
+                }
               >
                 <PageId>{item.id}</PageId>
-                <PageName>{item.name}</PageName>
+                <PageNameMenu>{item.name}</PageNameMenu>
               </SinglePageDiv>
             </StyledLink>
           ))}

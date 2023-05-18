@@ -27,7 +27,7 @@ export default function Home({ setBackgroundImage }: BackgroundImage) {
         back, and relax because we’ll give you a truly out of this world
         experience!
       </HomeTxt>
-      <StyledLink to="/Destination">
+      <StyledLink to="/Destination/Moon">
         <Explore>EXPLORE</Explore>
       </StyledLink>
     </StyledHome>

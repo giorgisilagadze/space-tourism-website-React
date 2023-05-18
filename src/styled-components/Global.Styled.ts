@@ -15,7 +15,6 @@ export const GlobalStyled = createGlobalStyle<any>`
         width: 100vw;
         height: 100%;
         background-repeat: no-repeat;
-        /* padding: 24px; */
     }
 `
 

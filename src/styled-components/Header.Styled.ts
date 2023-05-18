@@ -81,7 +81,7 @@ export const PageId = styled.p`
     color: white;
 `
 
-export const PageName = styled(PageId)`
+export const PageNameMenu = styled(PageId)`
     font-weight: 400;
 `
 
