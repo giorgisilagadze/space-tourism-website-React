@@ -3,13 +3,11 @@ import Home from "./pages/Home";
 import Destination from "./pages/Destination";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
-import Planet from "./pages/Planet";
-import CrewMember from "./pages/CrewMember";
 import Vehicle from "./pages/Vehicle";
 import { Helmet } from "react-helmet";
 import { GlobalStyled } from "./styled-components/Global.Styled";
 import Header from "./components/Header";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const backgroundImages: { [key: string]: string } = {
   path: "./assets/home/background-home-mobile.jpg",
