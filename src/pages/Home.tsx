@@ -14,7 +14,7 @@ interface BackgroundImage {
 
 export default function Home({ setBackgroundImage }: BackgroundImage) {
   useEffect(() => {
-    setBackgroundImage("./assets/home/background-home-mobile.jpg");
+    setBackgroundImage("../assets/home/background-home-mobile.jpg");
   }, []);
 
   return (

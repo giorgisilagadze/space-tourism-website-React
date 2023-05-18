@@ -10,6 +10,11 @@ export const HeaderStyled = styled.div`
     padding: 24px 24px 0px;
 `
 
+export const Logo = styled.img`
+    width: 40px;
+    height: 40px;
+`
+
 interface MenuProps {
     wi?: string
     right?: string
@@ -23,9 +28,10 @@ export const Menu = styled.div<MenuProps>`
     right: 0px;
     width: ${({wi}) => wi};
     height: 100%;
-    background-image: url("./assets/home/menu.png");
+    background-image: url("../assets/home/menu.png");
     background-repeat: no-repeat;
     transition: 0.5s;
+    z-index: 10;
 `
 
 export const Close = styled.img<MenuProps>`
@@ -60,6 +66,7 @@ export const SinglePageDiv = styled.div<MenuProps>`
         height: 31px;
         background-color: white;
         display: ${({display}) => display};
+        z-index: 11;
 
     }
 

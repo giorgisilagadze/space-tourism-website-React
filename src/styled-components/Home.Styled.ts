@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHome = styled.div`
-    margin-top: 48px;
+    margin: 48px 0px;
 `
 
 export const HomeP = styled.p`
