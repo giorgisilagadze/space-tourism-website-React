@@ -6,8 +6,17 @@ import {
   Explore,
 } from "../styled-components/Home.Styled";
 import { StyledLink } from "../styled-components/Header.Styled";
+import { useEffect } from "react";
 
-export default function Home() {
+interface BackgroundImage {
+  setBackgroundImage: (backgroundImage: string) => void;
+}
+
+export default function Home({ setBackgroundImage }: BackgroundImage) {
+  useEffect(() => {
+    setBackgroundImage("./assets/home/background-home-mobile.jpg");
+  }, []);
+
   return (
     <StyledHome>
       <HomeP>SO, YOU WANT TO TRAVEL TO</HomeP>

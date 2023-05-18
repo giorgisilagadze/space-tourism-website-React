@@ -7,18 +7,13 @@ import {
   SinglePageDiv,
   PageId,
   PageName,
-  StyledLink
+  StyledLink,
 } from "../styled-components/Header.Styled";
-import { useLocation } from "react-router-dom";
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const path = useLocation();
-
-  const currentPath = path.pathname;
-
-  console.log(currentPath);
+  const [active, setActive] = useState("");
 
   type Pages = {
     id: string;
@@ -37,7 +32,7 @@ export default function Header() {
     {
       id: "01",
       name: "DESTINATION",
-      realPath: "/Destination",
+      realPath: "/Destination/Moon",
     },
     {
       id: "02",
@@ -68,10 +63,12 @@ export default function Header() {
         />
         <PagesDiv left={isVisible ? "32px" : "286px"}>
           {pages.map((item) => (
-            <StyledLink to={item.realPath} key={Math.random()}>
-              <SinglePageDiv
-                display={item.realPath === currentPath ? "block" : "none"}
-              >
+            <StyledLink
+              to={item.realPath}
+              key={Math.random()}
+              onClick={() => setActive(item.name)}
+            >
+              <SinglePageDiv display={item.name == active ? "block" : "none"}>
                 <PageId>{item.id}</PageId>
                 <PageName>{item.name}</PageName>
               </SinglePageDiv>

@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 
 
-export const GlobalStyled = createGlobalStyle`
+export const GlobalStyled = createGlobalStyle<any>`
 
     * {
         margin: 0px;
@@ -10,11 +10,11 @@ export const GlobalStyled = createGlobalStyle`
     }
 
     body {
-        background-image: url("./assets/home/background-home-mobile.jpg");
-        background-repeat: no-repeat;
+        background-image: url(${({backgroundImage}) => backgroundImage});
         background-size: 100% 667px;
         width: 100vw;
-        padding: 24px;
+        background-repeat: no-repeat;
+        /* padding: 24px; */
     }
 `
 
