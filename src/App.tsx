@@ -18,6 +18,8 @@ export const backgroundImages: { [key: string]: string } = {
 function App() {
   const [backgroundImage, setBackgroundImage] = useState<string>("");
 
+  const [checked, setChecked] = useState<string>("");
+
   return (
     <>
       <Helmet>
@@ -29,7 +31,7 @@ function App() {
       </Helmet>
       <GlobalStyled backgroundImage={backgroundImage} />
       <Router>
-        <Header />
+        <Header checked={checked} setChecked={setChecked} />
         <Routes>
           <Route
             path="/"
@@ -37,15 +39,33 @@ function App() {
           />
           <Route
             path="/Destination/:planet"
-            element={<Destination setBackgroundImage={setBackgroundImage} />}
+            element={
+              <Destination
+                setBackgroundImage={setBackgroundImage}
+                checked={checked}
+                setChecked={setChecked}
+              />
+            }
           />
           <Route
             path="/Crew/:member"
-            element={<Crew setBackgroundImage={setBackgroundImage} />}
+            element={
+              <Crew
+                setBackgroundImage={setBackgroundImage}
+                checked={checked}
+                setChecked={setChecked}
+              />
+            }
           />
           <Route
             path="/Technology/:vehicle"
-            element={<Technology setBackgroundImage={setBackgroundImage} />}
+            element={
+              <Technology
+                setBackgroundImage={setBackgroundImage}
+                checked={checked}
+                setChecked={setChecked}
+              />
+            }
           />
         </Routes>
       </Router>

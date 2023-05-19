@@ -12,7 +12,12 @@ import {
 } from "../styled-components/Header.Styled";
 import { useLocation } from "react-router-dom";
 
-export default function Header() {
+interface State {
+  checked: string;
+  setChecked: (checked: string) => void;
+}
+
+export default function Header({ checked, setChecked }: State) {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const path = useLocation();
@@ -69,7 +74,11 @@ export default function Header() {
         />
         <PagesDiv left={isVisible ? "32px" : "286px"}>
           {pages.map((item) => (
-            <StyledLink to={item.realPath} key={Math.random()}>
+            <StyledLink
+              to={item.realPath}
+              key={Math.random()}
+              onClick={() => setChecked(item.realPath)}
+            >
               <SinglePageDiv
                 display={
                   item.realPath.split("/")[1] === currentPath.split("/")[1]

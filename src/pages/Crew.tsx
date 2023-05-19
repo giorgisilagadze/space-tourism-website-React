@@ -19,6 +19,8 @@ import { StyledLink } from "../styled-components/Header.Styled";
 
 interface BackgroundImage {
   setBackgroundImage: (backgroundImage: string) => void;
+  checked: string;
+  setChecked: (checked: string) => void;
 }
 
 interface Images {
@@ -33,11 +35,14 @@ interface Data {
   bio: string;
 }
 
-export default function Crew({ setBackgroundImage }: BackgroundImage) {
+export default function Crew({
+  setBackgroundImage,
+  checked,
+  setChecked,
+}: BackgroundImage) {
   const params = useParams();
 
   const [memberData, setMembertData] = useState<Data | undefined>();
-  const [checked, setChecked] = useState("");
 
   const location = useLocation();
   console.log(location.pathname);
