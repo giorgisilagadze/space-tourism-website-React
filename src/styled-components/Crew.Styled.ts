@@ -7,7 +7,7 @@ interface Styles {
 
 
 export const StyledCrew = styled.div`
-    margin: 24px 0px 104px;
+    margin: 24px 0px 80px;
 
     hr {
         width: 327px;

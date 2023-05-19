@@ -3,7 +3,6 @@ import Home from "./pages/Home";
 import Destination from "./pages/Destination";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
-import Vehicle from "./pages/Vehicle";
 import { Helmet } from "react-helmet";
 import { GlobalStyled } from "./styled-components/Global.Styled";
 import Header from "./components/Header";
@@ -45,10 +44,9 @@ function App() {
             element={<Crew setBackgroundImage={setBackgroundImage} />}
           />
           <Route
-            path="/Technology"
+            path="/Technology/:vehicle"
             element={<Technology setBackgroundImage={setBackgroundImage} />}
           />
-          <Route path="/Technology/:vehicle" element={<Vehicle />} />
         </Routes>
       </Router>
     </>

@@ -48,7 +48,7 @@ export default function Header() {
     {
       id: "03",
       name: "TECHNOLOGY",
-      realPath: "/Technology",
+      realPath: "/Technology/Launch vehicle",
     },
   ];
 

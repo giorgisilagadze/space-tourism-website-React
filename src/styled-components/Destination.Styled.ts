@@ -23,7 +23,7 @@ export const StyledDestination = styled.div`
 
 export const PageName = styled.div`
     display: flex;
-    gap: 18px;
+    gap: 16px;
     justify-content: center;
     align-items: center;
 `
