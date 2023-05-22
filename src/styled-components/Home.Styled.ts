@@ -1,54 +1,85 @@
 import styled from "styled-components";
 
 export const StyledHome = styled.div`
-    margin: 48px 0px;
-`
+  margin: 48px 0px;
+
+  @media (min-width: 768px) {
+    margin: 106px 0px 89px;
+  }
+`;
 
 export const HomeP = styled.p`
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19.2px;
-    letter-spacing: 2.7px;
-    text-align: center;
-    color: #D0D6F9;
-`
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.2px;
+  letter-spacing: 2.7px;
+  text-align: center;
+  color: #d0d6f9;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 3.38px;
+  }
+`;
 
 export const HomeTitle = styled.h1`
-    font-family: 'Bellefair', serif;
-    font-weight: 400;
-    font-size: 80px;
-    line-height: 100px;
-    text-align: center;
-    margin-top: 16px;
-    color: white;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 100px;
+  text-align: center;
+  margin-top: 16px;
+  color: white;
 
-`
+  @media (min-width: 768px) {
+    font-size: 150px;
+    line-height: 150px;
+    margin-top: 24px;
+  }
+`;
 
 export const HomeTxt = styled.p`
-    font-family: 'Barlow', sans-serif;
-    max-width: 327px;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 25px;
-    text-align: center;
-    margin: 16px auto 0px;
-    color: #D0D6F9;
-`
+  font-family: "Barlow", sans-serif;
+  max-width: 327px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+  margin: 16px auto 0px;
+  color: #d0d6f9;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 28px;
+    margin: 24px auto 0px;
+    max-width: 444px;
+  }
+`;
 
 export const Explore = styled.div`
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Bellefair', serif;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 22.92px;
-    letter-spacing: 1.25px;
-    color: #0B0D17;
-    margin: 81px auto 0px;
-`
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22.92px;
+  letter-spacing: 1.25px;
+  color: #0b0d17;
+  margin: 81px auto 0px;
+
+  @media (min-width: 768px) {
+    width: 242px;
+    height: 242px;
+    font-size: 32px;
+    line-height: 36.67px;
+    letter-spacing: 2px;
+    margin: 156px auto 0px;
+  }
+`;

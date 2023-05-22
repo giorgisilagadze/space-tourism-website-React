@@ -3,12 +3,15 @@ import {
   HeaderStyled,
   Logo,
   Menu,
+  Hamb,
   Close,
   PagesDiv,
   SinglePageDiv,
   PageId,
   PageNameMenu,
   StyledLink,
+  TabMenu,
+  PageNameMenuTab,
 } from "../styled-components/Header.Styled";
 import { useLocation } from "react-router-dom";
 
@@ -60,7 +63,26 @@ export default function Header({ checked, setChecked }: State) {
   return (
     <HeaderStyled>
       <Logo src="../assets/shared/logo.svg" alt="logo" />
-      <img
+      <TabMenu>
+        {pages.map((item) => (
+          <StyledLink
+            to={item.realPath}
+            onClick={() => setChecked(item.realPath)}
+            key={Math.random()}
+          >
+            <PageNameMenuTab
+              pb={
+                item.realPath.split("/")[1] === currentPath.split("/")[1]
+                  ? "3px solid white"
+                  : ""
+              }
+            >
+              {item.name}
+            </PageNameMenuTab>
+          </StyledLink>
+        ))}
+      </TabMenu>
+      <Hamb
         src="../assets/shared/icon-hamburger.svg"
         alt="icon-hamburger"
         onClick={() => setIsVisible(true)}

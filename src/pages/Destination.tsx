@@ -10,6 +10,7 @@ import {
   PlanetTxt,
   Dinstance,
   DinstP,
+  DivTab,
 } from "../styled-components/Destination.Styled";
 import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
@@ -17,7 +18,10 @@ import data from "../../data.json";
 import { StyledLink } from "../styled-components/Header.Styled";
 
 interface BackgroundImage {
-  setBackgroundImage: (backgroundImage: string) => void;
+  setBackgroundImages: (backgroundImages: {
+    mobile: string;
+    tablet: string;
+  }) => void;
   checked: string;
   setChecked: (checked: string) => void;
 }
@@ -36,14 +40,13 @@ interface Data {
 }
 
 export default function Destination({
-  setBackgroundImage,
+  setBackgroundImages,
   checked,
   setChecked,
 }: BackgroundImage) {
   const params = useParams();
 
   const [planetData, setPlanetData] = useState<Data | undefined>();
-  // const [checked, setChecked] = useState("");
 
   const location = useLocation();
   const page = location.pathname;
@@ -57,9 +60,10 @@ export default function Destination({
   ];
 
   useEffect(() => {
-    setBackgroundImage(
-      "../assets/destination/background-destination-mobile.jpg"
-    );
+    setBackgroundImages({
+      mobile: "../assets/destination/background-destination-mobile.jpg",
+      tablet: "../assets/destination/background-destination-tablet.jpg",
+    });
     const findData = data.destinations.find(
       (item) => item.name == params.planet
     );
@@ -90,14 +94,20 @@ export default function Destination({
       <HugeName>{planetData?.name}</HugeName>
       <PlanetTxt>{planetData?.description}</PlanetTxt>
       <hr />
-      <Dinstance color="#D0D6F9" bb="0px">
-        AVG. DISTANCE
-      </Dinstance>
-      <DinstP>{planetData?.distance}</DinstP>
-      <Dinstance color="#D0D6F9" bb="0px">
-        EST. TRAVEL TIME
-      </Dinstance>
-      <DinstP>{planetData?.travel}</DinstP>
+      <DivTab>
+        <div>
+          <Dinstance color="#D0D6F9" bb="0px">
+            AVG. DISTANCE
+          </Dinstance>
+          <DinstP>{planetData?.distance}</DinstP>
+        </div>
+        <div>
+          <Dinstance color="#D0D6F9" bb="0px">
+            EST. TRAVEL TIME
+          </Dinstance>
+          <DinstP>{planetData?.travel}</DinstP>
+        </div>
+      </DivTab>
     </StyledDestination>
   );
 }

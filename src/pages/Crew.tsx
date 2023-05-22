@@ -7,6 +7,10 @@ import {
   Proffesion,
   ProfName,
   CrewTxt,
+  ProffesionTab,
+  ProfNameTab,
+  CrewTxtTab,
+  MemberTab,
 } from "../styled-components/Crew.Styled";
 import {
   PageName,
@@ -18,7 +22,10 @@ import data from "../../data.json";
 import { StyledLink } from "../styled-components/Header.Styled";
 
 interface BackgroundImage {
-  setBackgroundImage: (backgroundImage: string) => void;
+  setBackgroundImages: (backgroundImages: {
+    mobile: string;
+    tablet: string;
+  }) => void;
   checked: string;
   setChecked: (checked: string) => void;
 }
@@ -36,7 +43,7 @@ interface Data {
 }
 
 export default function Crew({
-  setBackgroundImage,
+  setBackgroundImages,
   checked,
   setChecked,
 }: BackgroundImage) {
@@ -48,7 +55,10 @@ export default function Crew({
   console.log(location.pathname);
 
   useEffect(() => {
-    setBackgroundImage("../assets/crew/background-crew-mobile.jpg");
+    setBackgroundImages({
+      mobile: "../assets/crew/background-crew-mobile.jpg",
+      tablet: "../assets/crew/background-crew-tablet.jpg",
+    });
     const findData = data.crew.find((item) => item.name == params.member);
     setMembertData(findData);
   }, [checked]);
@@ -67,6 +77,11 @@ export default function Crew({
         <Number>02</Number>
         <Begin>Meet your crew</Begin>
       </PageName>
+      <ProffesionTab>{memberData?.role}</ProffesionTab>
+      <ProfNameTab>{memberData?.name}</ProfNameTab>
+      <CrewTxtTab max={params.member == "Douglas Hurley" ? "458px" : "592px"}>
+        {memberData?.bio}
+      </CrewTxtTab>
       <Member src={memberData?.images.webp} alt="member" />
       <hr />
       <ChangePath>
@@ -79,6 +94,7 @@ export default function Crew({
           </StyledLink>
         ))}
       </ChangePath>
+      <MemberTab src={memberData?.images.webp} alt="member" />
       <Proffesion>{memberData?.role}</Proffesion>
       <ProfName>{memberData?.name}</ProfName>
       <CrewTxt>{memberData?.bio}</CrewTxt>

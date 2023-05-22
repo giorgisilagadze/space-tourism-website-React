@@ -9,6 +9,9 @@ import {
   VehicleImg,
   ChangeDiv,
   Termp,
+  PageNameTech,
+  NameTech,
+  TechTxt,
 } from "../styled-components/Technology.Styled";
 import { useLocation, useParams } from "react-router-dom";
 import data from "../../data.json";
@@ -20,7 +23,10 @@ import {
 import { StyledLink } from "../styled-components/Header.Styled";
 
 interface BackgroundImage {
-  setBackgroundImage: (backgroundImage: string) => void;
+  setBackgroundImages: (backgroundImages: {
+    mobile: string;
+    tablet: string;
+  }) => void;
   checked: string;
   setChecked: (checked: string) => void;
 }
@@ -37,7 +43,7 @@ interface Data {
 }
 
 export default function Technology({
-  setBackgroundImage,
+  setBackgroundImages,
   checked,
   setChecked,
 }: BackgroundImage) {
@@ -49,7 +55,10 @@ export default function Technology({
   const location = useLocation();
 
   useEffect(() => {
-    setBackgroundImage("../assets/technology/background-technology-mobile.jpg");
+    setBackgroundImages({
+      mobile: "../assets/technology/background-technology-mobile.jpg",
+      tablet: "../assets/technology/background-technology-tablet.jpg",
+    });
     const findData = data.technology.find(
       (item) => item.name == params.vehicle
     );
@@ -64,10 +73,10 @@ export default function Technology({
 
   return (
     <StyledTech>
-      <PageName>
+      <PageNameTech>
         <Number>03</Number>
         <Begin>SPACE LAUNCH 101</Begin>
-      </PageName>
+      </PageNameTech>
       <VehicleImg src={vehicleData?.images.landscape} alt="vehicle" />
       <ChangePath>
         {buttons.map((item) => (
@@ -88,8 +97,8 @@ export default function Technology({
         ))}
       </ChangePath>
       <Termp>THE TERMINOLOGY…</Termp>
-      <ProfName>{vehicleData?.name}</ProfName>
-      <CrewTxt>{vehicleData?.description}</CrewTxt>
+      <NameTech>{vehicleData?.name}</NameTech>
+      <TechTxt>{vehicleData?.description}</TechTxt>
     </StyledTech>
   );
 }

@@ -9,12 +9,18 @@ import { StyledLink } from "../styled-components/Header.Styled";
 import { useEffect } from "react";
 
 interface BackgroundImage {
-  setBackgroundImage: (backgroundImage: string) => void;
+  setBackgroundImages: (backgroundImages: {
+    mobile: string;
+    tablet: string;
+  }) => void;
 }
 
-export default function Home({ setBackgroundImage }: BackgroundImage) {
+export default function Home({ setBackgroundImages }: BackgroundImage) {
   useEffect(() => {
-    setBackgroundImage("../assets/home/background-home-mobile.jpg");
+    setBackgroundImages({
+      mobile: "../assets/home/background-home-mobile.jpg",
+      tablet: "../assets/home/background-home-tablet.jpg",
+    });
   }, []);
 
   return (
