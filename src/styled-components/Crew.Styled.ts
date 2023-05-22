@@ -31,7 +31,6 @@ export const StyledCrew = styled.div`
     margin: 60px 0px 0px;
     padding: 0px 0px 0px 165px;
     display: flex;
-    gap: 100px;
     justify-content: center;
   }
 `;
@@ -168,8 +167,9 @@ export const ProfNameTab = styled(Proffesion)`
   }
 
   @media (min-width: 1440px) {
-    font-size: 54px;
+    font-size: 56px;
     line-height: 64.18px;
+    width: 614px;
     text-align: start;
     margin-top: 15px;
   }
@@ -198,6 +198,6 @@ export const CrewTxtTab = styled(PlanetTxt)<Styles>`
 export const DeskDiv = styled.div`
   @media (min-width: 1440px) {
     margin-top: 16px;
-    margin-right: 150px;
+    margin-right: 50px;
   }
 `;

@@ -20,7 +20,7 @@ interface State {
   setChecked: (checked: string) => void;
 }
 
-export default function Header({ checked, setChecked }: State) {
+export default function Header({ setChecked }: State) {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const path = useLocation();

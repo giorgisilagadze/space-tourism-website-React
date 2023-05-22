@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  PageName,
-  Number,
-  Begin,
-} from "../styled-components/Destination.Styled";
+import { Number, Begin } from "../styled-components/Destination.Styled";
 import {
   StyledTech,
   VehicleImg,
@@ -18,11 +14,6 @@ import {
 } from "../styled-components/Technology.Styled";
 import { useLocation, useParams } from "react-router-dom";
 import data from "../../data.json";
-import {
-  ChangePath,
-  ProfName,
-  CrewTxt,
-} from "../styled-components/Crew.Styled";
 import { StyledLink } from "../styled-components/Header.Styled";
 
 interface BackgroundImage {
