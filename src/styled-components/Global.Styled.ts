@@ -13,7 +13,7 @@ export const GlobalStyled = createGlobalStyle<any>`
           backgroundImages.mobile});
         background-size: 100% 100%;
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
         background-repeat: no-repeat;
 
         @media (min-width: 768px) {

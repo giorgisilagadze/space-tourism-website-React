@@ -12,6 +12,9 @@ import {
   PageNameTech,
   NameTech,
   TechTxt,
+  TechFlex,
+  ChangePathTech,
+  TechChildFlex,
 } from "../styled-components/Technology.Styled";
 import { useLocation, useParams } from "react-router-dom";
 import data from "../../data.json";
@@ -49,9 +52,22 @@ export default function Technology({
   setChecked,
 }: BackgroundImage) {
   const params = useParams();
-  console.log(params);
 
   const [vehicleData, setVehicleData] = useState<Data | undefined>();
+
+  const [documentWidth, setDocumentWidth] = useState(
+    document.documentElement.clientWidth
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setDocumentWidth(document.documentElement.clientWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [document.documentElement.clientWidth]);
 
   const location = useLocation();
 
@@ -67,6 +83,8 @@ export default function Technology({
     setVehicleData(findData);
   }, [checked]);
 
+  useEffect(() => {}, []);
+
   const buttons = [
     { number: "1", link: "/Technology/Launch%20vehicle" },
     { number: "2", link: "/Technology/Spaceport" },
@@ -79,28 +97,44 @@ export default function Technology({
         <Number>03</Number>
         <Begin>SPACE LAUNCH 101</Begin>
       </PageNameTech>
-      <VehicleImg src={vehicleData?.images.landscape} alt="vehicle" />
-      <ChangePath>
-        {buttons.map((item) => (
-          <StyledLink to={item.link} key={Math.random()}>
-            <ChangeDiv
-              onClick={() => setChecked(item.link)}
-              bg={item.link == location.pathname ? "white" : "none"}
-              color={item.link == location.pathname ? "#0B0D17" : "white"}
-              border={
-                item.link == location.pathname
-                  ? "1px solid white"
-                  : "1px solid #4c4c56"
-              }
-            >
-              {item.number}
-            </ChangeDiv>
-          </StyledLink>
-        ))}
-      </ChangePath>
-      <Termp>THE TERMINOLOGY…</Termp>
-      <NameTech>{vehicleData?.name}</NameTech>
-      <TechTxt>{vehicleData?.description}</TechTxt>
+      <TechFlex>
+        <VehicleImg
+          src={
+            documentWidth >= 1440
+              ? vehicleData?.images.portrait
+              : vehicleData?.images.landscape
+          }
+          alt="vehicle"
+        />
+        <TechChildFlex>
+          <ChangePathTech>
+            {buttons.map((item) => (
+              <StyledLink
+                to={item.link}
+                key={Math.random()}
+                onClick={() => setChecked(item.link)}
+              >
+                <ChangeDiv
+                  bg={item.link == location.pathname ? "white" : "none"}
+                  color={item.link == location.pathname ? "#0B0D17" : "white"}
+                  border={
+                    item.link == location.pathname
+                      ? "1px solid white"
+                      : "1px solid #4c4c56"
+                  }
+                >
+                  {item.number}
+                </ChangeDiv>
+              </StyledLink>
+            ))}
+          </ChangePathTech>
+          <div>
+            <Termp>THE TERMINOLOGY…</Termp>
+            <NameTech>{vehicleData?.name}</NameTech>
+            <TechTxt>{vehicleData?.description}</TechTxt>
+          </div>
+        </TechChildFlex>
+      </TechFlex>
     </StyledTech>
   );
 }

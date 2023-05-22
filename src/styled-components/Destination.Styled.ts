@@ -117,6 +117,8 @@ export const Name = styled.p<Styles>`
   }
 
   @media (min-width: 1440px) {
+    cursor: pointer;
+
     &:hover {
       border-bottom: solid 3px #a2a7b4;
     }

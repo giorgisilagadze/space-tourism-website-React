@@ -120,20 +120,20 @@ export const Explore = styled.div<Styles>`
     height: 274px;
     font-size: 32px;
     margin: ${({ mt }) => mt} auto 0px;
+    position: relative;
 
     &:hover {
       box-shadow: 0 0 88px #364557;
     }
-  }
-`;
 
-export const ShadDiv = styled.div<Styles>`
-  @media (min-width: 1440px) {
-    width: 450px;
-    height: 450px;
-    background-color: white;
-    border-radius: 50%;
-    opacity: 0.1;
-    display: ${({ display }) => display};
+    &:hover::before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0.1;
+    }
   }
 `;

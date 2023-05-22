@@ -77,8 +77,9 @@ export const Menu = styled.div<MenuProps>`
   top: 0px;
   right: 0px;
   width: ${({ wi }) => wi};
-  height: 100%;
+  height: 100vh;
   background-image: url("../assets/home/menu.png");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   transition: 0.5s;
   z-index: 10;

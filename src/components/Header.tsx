@@ -27,8 +27,6 @@ export default function Header({ checked, setChecked }: State) {
 
   const currentPath = path.pathname;
 
-  console.log(currentPath.slice(0, 12));
-
   type Pages = {
     id: string;
     name: string;
@@ -109,7 +107,10 @@ export default function Header({ checked, setChecked }: State) {
             <StyledLink
               to={item.realPath}
               key={Math.random()}
-              onClick={() => setChecked(item.realPath)}
+              onClick={() => {
+                setChecked(item.realPath);
+                setIsVisible(false);
+              }}
             >
               <SinglePageDiv
                 display={

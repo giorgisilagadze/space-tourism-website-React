@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { PageName, PlanetTxt } from "./Destination.Styled";
-import { Proffesion } from "./Crew.Styled";
+import { ChangePath, Proffesion } from "./Crew.Styled";
 
 interface Styles {
   bg: string;
@@ -14,12 +14,21 @@ export const StyledTech = styled.div`
   @media (min-width: 768px) {
     margin: 40px 0px 97.33px;
   }
+
+  @media (min-width: 1440px) {
+    margin: 40px 0px 101px;
+    padding-left: 166.5px;
+  }
 `;
 
 export const PageNameTech = styled(PageName)`
   @media (min-width: 768px) {
     justify-content: start;
     margin-left: 38.5px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-left: 0px;
   }
 `;
 
@@ -33,6 +42,12 @@ export const VehicleImg = styled.img`
     width: 768px;
     height: 310px;
     margin: 60px auto 0px;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 515px;
+    height: 527px;
+    margin: 0px;
   }
 `;
 
@@ -52,6 +67,17 @@ export const ChangeDiv = styled.div<Styles>`
     height: 60px;
     margin: 16px auto 0px;
   }
+
+  @media (min-width: 1440px) {
+    width: 80px;
+    height: 80px;
+    margin: 32px auto 0px;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid white;
+    }
+  }
 `;
 
 export const Termp = styled.p`
@@ -70,6 +96,11 @@ export const Termp = styled.p`
     letter-spacing: 2.7px;
     margin-top: 44px;
   }
+
+  @media (min-width: 1440px) {
+    text-align: start;
+    margin-top: 0px;
+  }
 `;
 
 export const NameTech = styled(Proffesion)`
@@ -84,6 +115,13 @@ export const NameTech = styled(Proffesion)`
     display: block;
     margin-top: 16px;
   }
+
+  @media (min-width: 1440px) {
+    font-size: 56px;
+    line-height: 64.18px;
+    margin-top: 11px;
+    text-align: start;
+  }
 `;
 
 export const TechTxt = styled(PlanetTxt)`
@@ -91,5 +129,30 @@ export const TechTxt = styled(PlanetTxt)`
 
   @media (min-width: 768px) {
     max-width: 458px;
+  }
+`;
+
+export const TechFlex = styled.div`
+  @media (min-width: 1440px) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    margin-top: 26px;
+    gap: 128px;
+  }
+`;
+
+export const ChangePathTech = styled(ChangePath)`
+  @media (min-width: 1440px) {
+    display: block;
+    margin-top: -32px;
+  }
+`;
+
+export const TechChildFlex = styled.div`
+  @media (min-width: 1440px) {
+    display: flex;
+    gap: 80px;
   }
 `;

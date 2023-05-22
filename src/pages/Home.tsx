@@ -4,10 +4,9 @@ import {
   HomeTitle,
   HomeTxt,
   Explore,
-  ShadDiv,
 } from "../styled-components/Home.Styled";
 import { StyledLink } from "../styled-components/Header.Styled";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 interface BackgroundImage {
   setBackgroundImages: (backgroundImages: {
@@ -18,8 +17,6 @@ interface BackgroundImage {
 }
 
 export default function Home({ setBackgroundImages }: BackgroundImage) {
-  const [hover, setHover] = useState<boolean>(false);
-
   useEffect(() => {
     setBackgroundImages({
       mobile: "../assets/home/background-home-mobile.jpg",
@@ -41,14 +38,7 @@ export default function Home({ setBackgroundImages }: BackgroundImage) {
         </HomeTxt>
       </div>
       <StyledLink to="/Destination/Moon">
-        <ShadDiv display={hover ? "block" : "none"} />
-        <Explore
-          onMouseOver={() => setHover(true)}
-          onMouseOut={() => setHover(false)}
-          mt={hover ? "-362px" : "88px"}
-        >
-          EXPLORE
-        </Explore>
+        <Explore>EXPLORE</Explore>
       </StyledLink>
     </StyledHome>
   );

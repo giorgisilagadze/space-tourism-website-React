@@ -52,7 +52,6 @@ export default function Destination({
 
   const location = useLocation();
   const page = location.pathname;
-  console.log(page);
 
   const planets = [
     { name: "MOON", link: "/Destination/Moon" },
@@ -72,7 +71,6 @@ export default function Destination({
     );
     setPlanetData(findData);
   }, [checked]);
-  console.log(planetData);
 
   return (
     <StyledDestination>
@@ -85,9 +83,12 @@ export default function Destination({
         <div>
           <PlanetsDiv>
             {planets.map((item) => (
-              <StyledLink to={item.link} key={Math.random()}>
+              <StyledLink
+                to={item.link}
+                key={Math.random()}
+                onClick={() => setChecked(item.name)}
+              >
                 <Name
-                  onClick={() => setChecked(item.name)}
                   color={page == item.link ? "#FFFFFF" : "#D0D6F9"}
                   bb={page == item.link ? "3px solid white" : ""}
                 >

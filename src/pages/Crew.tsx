@@ -11,6 +11,7 @@ import {
   ProfNameTab,
   CrewTxtTab,
   MemberTab,
+  DeskDiv,
 } from "../styled-components/Crew.Styled";
 import {
   PageName,
@@ -53,7 +54,6 @@ export default function Crew({
   const [memberData, setMembertData] = useState<Data | undefined>();
 
   const location = useLocation();
-  console.log(location.pathname);
 
   useEffect(() => {
     setBackgroundImages({
@@ -64,7 +64,6 @@ export default function Crew({
     const findData = data.crew.find((item) => item.name == params.member);
     setMembertData(findData);
   }, [checked]);
-  console.log(memberData);
 
   const links = [
     "/Crew/Douglas%20Hurley",
@@ -75,27 +74,32 @@ export default function Crew({
 
   return (
     <StyledCrew>
-      <PageName>
-        <Number>02</Number>
-        <Begin>Meet your crew</Begin>
-      </PageName>
-      <ProffesionTab>{memberData?.role}</ProffesionTab>
-      <ProfNameTab>{memberData?.name}</ProfNameTab>
-      <CrewTxtTab max={params.member == "Douglas Hurley" ? "458px" : "592px"}>
-        {memberData?.bio}
-      </CrewTxtTab>
-      <Member src={memberData?.images.webp} alt="member" />
-      <hr />
-      <ChangePath>
-        {links.map((item) => (
-          <StyledLink to={item} key={Math.random()}>
-            <ChangeDiv
+      <DeskDiv>
+        <PageName>
+          <Number>02</Number>
+          <Begin>Meet your crew</Begin>
+        </PageName>
+        <ProffesionTab>{memberData?.role}</ProffesionTab>
+        <ProfNameTab>{memberData?.name}</ProfNameTab>
+        <CrewTxtTab max={params.member == "Douglas Hurley" ? "458px" : "592px"}>
+          {memberData?.bio}
+        </CrewTxtTab>
+        <Member src={memberData?.images.webp} alt="member" />
+        <hr />
+        <ChangePath mt={params.member == "Victor Glover" ? "88px" : "120px"}>
+          {links.map((item) => (
+            <StyledLink
+              to={item}
+              key={Math.random()}
               onClick={() => setChecked(item)}
-              opa={location.pathname == item ? "1" : "0.17"}
-            ></ChangeDiv>
-          </StyledLink>
-        ))}
-      </ChangePath>
+            >
+              <ChangeDiv
+                opa={location.pathname == item ? "1" : "0.17"}
+              ></ChangeDiv>
+            </StyledLink>
+          ))}
+        </ChangePath>
+      </DeskDiv>
       <MemberTab src={memberData?.images.webp} alt="member" />
       <Proffesion>{memberData?.role}</Proffesion>
       <ProfName>{memberData?.name}</ProfName>
