@@ -12,6 +12,21 @@ export const HeaderStyled = styled.div`
   @media (min-width: 768px) {
     padding: 0px 0px 0px 39px;
   }
+
+  @media (min-width: 1440px) {
+    margin-top: 40px;
+
+    hr {
+      width: 473px;
+      height: 1px;
+      margin: 0px auto;
+      border: none;
+      background-color: #383b4b;
+      right: 800px;
+      position: fixed;
+      z-index: 99;
+    }
+  }
 `;
 
 export const Logo = styled.img`
@@ -39,6 +54,13 @@ export const TabMenu = styled.nav`
   @media (min-width: 768px) {
     display: flex;
     justify-content: space-between;
+  }
+
+  @media (min-width: 1440px) {
+    width: 830px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40.7742px);
+    padding: 38.5px 167px 1px 123px;
   }
 `;
 
@@ -95,6 +117,25 @@ export const SinglePageDiv = styled.div<MenuProps>`
     display: ${({ display }) => display};
     z-index: 11;
   }
+
+  @media (min-width: 768px) {
+    margin-top: 0px;
+    &::before {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    border-bottom: ${({ pb }) => pb};
+
+    &::before {
+      display: none;
+    }
+
+    &:hover {
+      border-bottom: solid 3px #a2a7b4;
+    }
+  }
 `;
 
 export const PageId = styled.p`
@@ -104,10 +145,22 @@ export const PageId = styled.p`
   line-height: 19.2px;
   letter-spacing: 2.7px;
   color: white;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  @media (min-width: 1440px) {
+    display: block;
+  }
 `;
 
 export const PageNameMenu = styled(PageId)`
   font-weight: 400;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -119,4 +172,8 @@ export const PageNameMenuTab = styled(PageNameMenu)<MenuProps>`
   letter-spacing: 2.36px;
   padding-bottom: 37px;
   border-bottom: ${({ pb }) => pb};
+
+  @media (min-width: 1440px) {
+    border-bottom: none;
+  }
 `;

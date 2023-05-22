@@ -1,7 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
-
 export const GlobalStyled = createGlobalStyle<any>`
 
     * {
@@ -11,14 +9,22 @@ export const GlobalStyled = createGlobalStyle<any>`
     }
 
     body {
-        background-image: url(${({backgroundImages}) => backgroundImages.mobile});
+        background-image: url(${({ backgroundImages }) =>
+          backgroundImages.mobile});
         background-size: 100% 100%;
         width: 100vw;
         height: 100vh;
         background-repeat: no-repeat;
 
         @media (min-width: 768px) {
-            background-image: url(${({backgroundImages}) => backgroundImages.tablet});
+            background-image: url(${({ backgroundImages }) =>
+              backgroundImages.tablet});
+        }
+
+        @media (min-width: 1440px) {
+            background-image: url(${({ backgroundImages }) =>
+              backgroundImages.desktop});
+            overflow: hidden;
         }
     }
 `;

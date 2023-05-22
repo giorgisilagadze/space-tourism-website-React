@@ -19,7 +19,8 @@ function App() {
   const [backgroundImages, setBackgroundImages] = useState<{
     mobile: string;
     tablet: string;
-  }>({ mobile: "", tablet: "" });
+    desktop: string;
+  }>({ mobile: "", tablet: "", desktop: "" });
 
   const [checked, setChecked] = useState<string>("");
 

@@ -25,6 +25,7 @@ interface BackgroundImage {
   setBackgroundImages: (backgroundImages: {
     mobile: string;
     tablet: string;
+    desktop: string;
   }) => void;
   checked: string;
   setChecked: (checked: string) => void;
@@ -58,6 +59,7 @@ export default function Crew({
     setBackgroundImages({
       mobile: "../assets/crew/background-crew-mobile.jpg",
       tablet: "../assets/crew/background-crew-tablet.jpg",
+      desktop: "../assets/crew/background-crew-desktop.jpg",
     });
     const findData = data.crew.find((item) => item.name == params.member);
     setMembertData(findData);

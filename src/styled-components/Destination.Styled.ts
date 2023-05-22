@@ -26,6 +26,16 @@ export const StyledDestination = styled.div`
       margin: 49px auto 0px;
     }
   }
+
+  @media (min-width: 1440px) {
+    margin: 76px 0px 112px;
+    padding: 0px 165px;
+
+    hr {
+      width: 444px;
+      margin: 54px auto 0px;
+    }
+  }
 `;
 
 export const PageName = styled.div`
@@ -64,6 +74,12 @@ export const Planet = styled.img`
     height: 300px;
     margin: 60px auto 0px;
   }
+
+  @media (min-width: 1440px) {
+    width: 445px;
+    height: 445px;
+    margin: 0px 0px 0px 40px;
+  }
 `;
 
 export const PlanetsDiv = styled.div`
@@ -75,6 +91,11 @@ export const PlanetsDiv = styled.div`
   @media (min-width: 768px) {
     margin-top: 53px;
     gap: 36px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 0px;
+    justify-content: start;
   }
 `;
 
@@ -94,6 +115,12 @@ export const Name = styled.p<Styles>`
     letter-spacing: 2.7px;
     padding-bottom: 12px;
   }
+
+  @media (min-width: 1440px) {
+    &:hover {
+      border-bottom: solid 3px #a2a7b4;
+    }
+  }
 `;
 
 export const HugeName = styled(HomeTitle)`
@@ -107,6 +134,12 @@ export const HugeName = styled(HomeTitle)`
     line-height: 91.68px;
     margin-top: 32px;
   }
+
+  @media (min-width: 1440px) {
+    font-size: 100px;
+    line-height: 114.6px;
+    margin-top: 37px;
+  }
 `;
 
 export const PlanetTxt = styled(HomeTxt)`
@@ -115,6 +148,11 @@ export const PlanetTxt = styled(HomeTxt)`
   @media (min-width: 768px) {
     margin-top: 8px;
     max-width: 573px;
+  }
+
+  @media (min-width: 1440px) {
+    margin: 14px 0px 0px;
+    max-width: 444px;
   }
 `;
 
@@ -128,6 +166,10 @@ export const Dinstance = styled(Name)<Styles>`
     line-height: 16.8px;
     letter-spacing: 2.36px;
     padding: 0px;
+  }
+
+  @media (min-width: 1440px) {
+    text-align: start;
   }
 `;
 export const DinstP = styled(HugeName)`
@@ -147,5 +189,19 @@ export const DivTab = styled.div`
     justify-content: center;
     gap: 90px;
     margin-top: 28px;
+  }
+
+  @media (min-width: 1440px) {
+    justify-content: start;
+  }
+`;
+
+export const DestFlex = styled.div`
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 157px;
+    margin-top: 64px;
   }
 `;

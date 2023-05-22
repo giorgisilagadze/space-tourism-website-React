@@ -63,6 +63,7 @@ export default function Header({ checked, setChecked }: State) {
   return (
     <HeaderStyled>
       <Logo src="../assets/shared/logo.svg" alt="logo" />
+      <hr />
       <TabMenu>
         {pages.map((item) => (
           <StyledLink
@@ -70,15 +71,24 @@ export default function Header({ checked, setChecked }: State) {
             onClick={() => setChecked(item.realPath)}
             key={Math.random()}
           >
-            <PageNameMenuTab
+            <SinglePageDiv
               pb={
                 item.realPath.split("/")[1] === currentPath.split("/")[1]
                   ? "3px solid white"
                   : ""
               }
             >
-              {item.name}
-            </PageNameMenuTab>
+              <PageId>{item.id}</PageId>
+              <PageNameMenuTab
+                pb={
+                  item.realPath.split("/")[1] === currentPath.split("/")[1]
+                    ? "3px solid white"
+                    : ""
+                }
+              >
+                {item.name}
+              </PageNameMenuTab>
+            </SinglePageDiv>
           </StyledLink>
         ))}
       </TabMenu>

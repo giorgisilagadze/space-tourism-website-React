@@ -26,6 +26,7 @@ interface BackgroundImage {
   setBackgroundImages: (backgroundImages: {
     mobile: string;
     tablet: string;
+    desktop: string;
   }) => void;
   checked: string;
   setChecked: (checked: string) => void;
@@ -58,6 +59,7 @@ export default function Technology({
     setBackgroundImages({
       mobile: "../assets/technology/background-technology-mobile.jpg",
       tablet: "../assets/technology/background-technology-tablet.jpg",
+      desktop: "../assets/technology/background-technology-desktop.jpg",
     });
     const findData = data.technology.find(
       (item) => item.name == params.vehicle
